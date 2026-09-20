@@ -1,0 +1,8 @@
+// Enriches failed-logon events with geographic data using the "geoip" Sentinel watchlist
+let GeoIPDB_FULL = _GetWatchlist("geoip");
+let WindowsEvents = SecurityEvent
+    | where EventID == 4625
+    | order by TimeGenerated desc
+    | evaluate ipv4_lookup(GeoIPDB_FULL, IpAddress, network);
+WindowsEvents
+| project TimeGenerated, Computer, AttackerIp = IpAddress, City = cityname, Country = countryname, latitude, longitude

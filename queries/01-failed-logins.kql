@@ -1,0 +1,4 @@
+// Detects failed RDP/logon attempts (Event ID 4625) on the honeypot VM
+SecurityEvent
+| where EventID == 4625
+| order by TimeGenerated desc
