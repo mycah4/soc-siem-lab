@@ -140,8 +140,4 @@ See [`workbook/attack-map.json`](workbook/attack-map.json).
 7. Run the queries in [`queries/`](queries/) against the workspace.
 8. Create a new Workbook, add a Query element, switch to Advanced Editor, and paste [`workbook/attack-map.json`](workbook/attack-map.json).
 
-> **Cost note:** Leaving a VM, Log Analytics ingestion, and Sentinel running 24/7 incurs ongoing Azure charges. Shut down or delete resources when not actively using the lab.
 
-## Credits
-
-Lab structure based on the public SOC/honeypot lab checklist and GeoIP dataset from [Josh Madakor](https://github.com/joshmadakor1) / the Cyber Range community.
